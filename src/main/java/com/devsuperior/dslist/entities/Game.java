@@ -19,27 +19,47 @@ public class Game {
 	
 	private String title;
 	private int gameYear;
+	private int score;
 	private String genre;
-	private String platform;
+	private String platforms;
 	private String imgUrl;
+	@Column (length = 600)
 	private String shortDescription;
+	@Column (length = 800)
 	private String longDescription;
 	
 	public Game () {
 		
 	}
 
-	public Game(Long id, String title, int year, String genre, String platform, String imgUrl,
-			String shortDescription, String longDescription) {
+	public Game(Long id, String title, int year, String genre, String platforms, String imgUrl,
+			String shortDescription, String longDescription, int score) {
 		
 		this.id = id;
 		this.title = title;
 		this.gameYear = year;
 		this.genre = genre;
-		this.platform = platform;
+		this.platforms = platforms;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
+		this.score = score;
+	}
+
+	public int getGameYear() {
+		return gameYear;
+	}
+
+	public void setGameYear(int gameYear) {
+		this.gameYear = gameYear;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	public Long getId() {
@@ -75,11 +95,11 @@ public class Game {
 	}
 
 	public String getPlatform() {
-		return platform;
+		return platforms;
 	}
 
 	public void setPlatform(String platform) {
-		this.platform = platform;
+		this.platforms = platform;
 	}
 
 	public String getImgUrl() {
